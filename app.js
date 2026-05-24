@@ -393,5 +393,8 @@ const camera = new Camera(videoElement, {
   height: 720
 });
 
-camera.start();
+camera.start().catch(err => {
+  alert('Camera error: ' + err.message);
+  console.error(err);
+});
 setIdle();
